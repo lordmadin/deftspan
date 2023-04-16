@@ -1324,7 +1324,7 @@ nav.template-main-menu > ul > li > a {
   font-weight: 500;
   line-height: 16px;
   display: block;
-  color: var(--bs-gray-900);
+  color: #212529;
   text-transform: capitalize;
   font-family: "Ubuntu", sans-serif;
   position: relative;
