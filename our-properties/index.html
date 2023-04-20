@@ -500,7 +500,7 @@
                 container.innerHTML = "";
                 posts.forEach((post) => {
                     const div = cardTemplate.content.cloneNode(true);
-                    div.getElementById("list-link").href = `/single-listing/?id=` + post.id;
+                    div.getElementById("list-link").href = `/single-listing/?product=` + post.slug + `&id=` + post.id;
                     div.getElementById("list-img").src = `.././img/plot/` + post.cover;
                     div.getElementById("list-title").textContent = post.title;
                     div.getElementById("list-price").textContent = post.price;

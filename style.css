@@ -3746,6 +3746,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
 .widget.widget-contact-box .media .media-body .item-phn {
   color: #212121;
   font-size: 16px;
+  cursor: pointer;
 }
 .widget.widget-contact-box .media .media-body .item-phn span {
   color: var(--rt-primary-color);
@@ -3754,6 +3755,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   color: #212121;
   font-size: 15px;
   font-weight: 500;
+  cursor: pointer;
 }
 .widget.widget-contact-box .media .media-body .item-rating ul li {
   display: inline-block;
@@ -12485,7 +12487,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   position: relative;
   margin-bottom: 24px;
 }
-.property-box3:hover .item-img a img {
+a#list-link:hover .property-box3 .item-img img {
   transform: scale(1.1);
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
@@ -12495,6 +12497,8 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   z-index: 2;
   overflow: hidden;
 }
+
+
 .property-box3 .item-img:before {
   content: "";
   height: 70%;

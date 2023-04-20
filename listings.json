@@ -1,6 +1,7 @@
 [
     {
         "title": "3 Bedroom House in Kantafu",
+        "slug":"3-bedroom-house-in-Kantafu",
         "id": 1,
         "type": "house",
         "price": "8 M",
@@ -16,6 +17,7 @@
     },
     {
         "title": "50 x 100 Plot in Kantafu",
+        "slug":"50-100-Plot-in-Kantafu",
         "id": 2,
         "type": "land",
         "price": "1 M",
@@ -31,6 +33,7 @@
     },
     {
         "title": "1 ACRE Land in Kantafu.",
+        "slug":"1-ACRE-Land-in-Kantafu.",
         "id": 3,
         "type": "land",
         "price": "4.5 M",
@@ -46,6 +49,7 @@
     },
     {
         "title": "3 Bedroom House in Kamulu",
+        "slug":"3-Bedroom-House-in-Kamulu",
         "id": 4,
         "type": "house",
         "price": "3.3 M",
@@ -60,7 +64,8 @@
         "status": "available"
     },
     {
-        "title": "345 acres at Malaa",
+        "title": "345-acres-at-Malaa",
+        "slug":"",
         "id": 5,
         "type": "land",
         "price": "2.5 M/per acre",
@@ -76,6 +81,7 @@
     },
     {
         "title": "50 x 100 Plot in Kantafu",
+        "slug":"50-100-Plot-in-Kantafu",
         "id": 6,
         "type": "land",
         "price": "1.3 M",
@@ -91,6 +97,7 @@
     },
     {
         "title": "50 x 100 Plot in Kantafu",
+        "slug":"50-100-Plot-in-Kantafu",
         "id": 7,
         "type": "land",
         "price": "500K",
@@ -106,6 +113,7 @@
     },
     {
         "title": "50 x 100 Plot in Kantafu",
+        "slug":"50-100-Plot-in-Kantafu",
         "id": 8,
         "type": "land",
         "price": "1.2 M",
@@ -121,6 +129,7 @@
     },
     {
         "title": "40 x 80 Plot in Kantafu",
+        "slug":"48-80-Plot-in-Kantafu",
         "id": 9,
         "type": "land",
         "price": "600K",
@@ -136,6 +145,7 @@
     },
     {
         "title": "Land for Sale in Malindi",
+        "slug":"Land-for-Sale-in-Malindi",
         "id": 10,
         "type": "land",
         "price": "null",
