@@ -503,7 +503,7 @@
                     div.getElementById("list-link").href = `/single-listing/?product=` + post.slug + `&id=` + post.id;
                     div.getElementById("list-img").src = `.././img/plot/` + post.cover;
                     div.getElementById("list-title").textContent = post.title;
-                    div.getElementById("list-price").textContent = post.price;
+                    div.getElementById("list-price").textContent =`KES` + post.price;
                     div.getElementById("list-size").textContent = post.size;
                     container.append(div);
                 });
