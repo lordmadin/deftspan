@@ -185,8 +185,8 @@
                   <div class="single-verified-area">
                     <div class="item-title">
                       <h3>
-                        <a href="#">3 Bedroom House in Kantafu</a>
-                        <div class="single-list-price">Kes. 8M/=</div>
+                        <a href="#" id="single-title">3 Bedroom House in Kantafu</a>
+                        <div class="single-list-price" id="single-price">Kes. 8 M</div>
                         <!-- <span class="single-list-price"></span> -->
                       </h3>                      
                     </div>
@@ -195,7 +195,7 @@
                   <div class="single-item-address">
                     <ul>
                       <li>
-                        <i class="fas fa-map-marker-alt"></i>Kantafu,Kangundo Road, Safaricom area, 1.2 kms from the tarmac.
+                        <i class="fas fa-map-marker-alt" id="single-location"></i>Kantafu,Kangundo Road, Safaricom area, 1.2 kms from the tarmac.
                       </li>
                     </ul>
                   </div>
@@ -734,6 +734,31 @@
 
   <!-- Main Js Start Here -->
   <script src=".././js/main.js"></script>
+  <script>
+    //Clone the card template
+    const container = document.getElementById("list");
+    const cardTemplate = document.getElementById("template");
+    for (let i = 0; i < 10; i++) {
+        container.append(cardTemplate.content.cloneNode(true));
+    }
+
+    fetch(".././listings.json")
+        .then((response) => response.json())
+        .then(posts => {
+            console.log(posts)
+
+            container.innerHTML = "";
+            posts.forEach((post) => {
+                const div = cardTemplate.content.cloneNode(true);
+                div.getElementById("list-link").href = `/single-listing/?product=` + post.slug + `&id=` + post.id;
+                div.getElementById("list-img").src = `.././img/plot/` + post.cover;
+                div.getElementById("list-title").textContent = post.title;
+                div.getElementById("list-price").textContent =`Kes&nbsp` + post.price;
+                div.getElementById("list-size").textContent = post.size;
+                container.append(div);
+            });
+        });
+</script>
 </body>
 
 </html>
