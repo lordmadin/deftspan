@@ -315,7 +315,7 @@
                     </div>
                   </div>
                   <div class="overview-area listing-area">
-                    <h3 class="item-title">About This Listing</h3>
+                    <h3 class="item-title" id="list-about">About This Listing</h3>
                     <p>
                       An exquisite house for sale in Kantafu, Safaricom area,3 Bedroom ensuite, own compound with
                       executive finishing and beautiful lanscapping. CCTV on Site
@@ -739,28 +739,23 @@
   <!-- Main Js Start Here -->
   <script src=".././js/main.js"></script>
   <script>
-    //Clone the card template
-    const container = document.getElementById("list");
-    const cardTemplate = document.getElementById("template");
+    const query = window.location.search;
 
+    const params = new URLSearchParams(query);
+    const id = parseInt(params.get("id"));
 
     fetch(".././listings.json")
       .then((response) => response.json())
-      .then(posts => {
-        console.log(posts)
-        for (let i = 0; i < posts.length; i++) {
-          container.append(cardTemplate.content.cloneNode(true));
-        }
-        container.innerHTML = "";
-        posts.forEach((post) => {
-          const div = cardTemplate.content.cloneNode(true);
-          div.getElementById("list-link").href = `/single-listing/?product=` + post.slug + `&id=` + post.id;
-          div.getElementById("list-img").src = `.././img/plot/` + post.cover;
-          div.getElementById("list-title").textContent = post.title;
-          div.getElementById("list-price").textContent = `Kes&nbsp` + post.price;
-          div.getElementById("list-size").textContent = post.size;
-          container.append(div);
-        });
+      .then(data => {
+        product = data[id];
+        console.log(product)
+
+          div.getElementById("list-img").src = `.././img/plot/` + product.cover;
+          div.getElementById("single-title").textContent = product.title;
+          div.getElementById("single-list-price").textContent = `Kes.` + " " + product.price;
+          div.getElementById("single-location").textContent = product.location;
+          div.getElementById("list-about").textContent= product.desc;
+      
       });
   </script>
 </body>
