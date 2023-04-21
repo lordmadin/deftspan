@@ -185,7 +185,8 @@
                                                 <ul>
                                                     <li><i class="fa fa-bolt"></i>Electricity</li>
                                                     <li><i class="fa fa-road"></i>Tarmac</li>
-                                                    <li id="list-size"><i class="flaticon-two-overlapping-square"></i>3 Bedroom</li>
+                                                    <li id="list-size"><i class="flaticon-two-overlapping-square"></i>3
+                                                        Bedroom</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -470,22 +471,22 @@
         //Clone the card template
         const container = document.getElementById("list");
         const cardTemplate = document.getElementById("template");
-        for (let i = 0; i < 10; i++) {
-            container.append(cardTemplate.content.cloneNode(true));
-        }
 
         fetch(".././listings.json")
             .then((response) => response.json())
             .then(posts => {
                 console.log(posts)
 
+                for (let i = 0; i < posts.length; i++) {
+                    container.append(cardTemplate.content.cloneNode(true));
+                }
                 container.innerHTML = "";
                 posts.forEach((post) => {
                     const div = cardTemplate.content.cloneNode(true);
                     div.getElementById("list-link").href = `/single-listing/?product=` + post.slug + `&id=` + post.id;
                     div.getElementById("list-img").src = `.././img/plot/` + post.cover;
                     div.getElementById("list-title").textContent = post.title;
-                    div.getElementById("list-price").textContent =`Kes&nbsp` + post.price;
+                    div.getElementById("list-price").textContent = `Kes&nbsp` + post.price;
                     div.getElementById("list-size").textContent = post.size;
                     container.append(div);
                 });

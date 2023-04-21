@@ -188,14 +188,15 @@
                         <a href="#" id="single-title">3 Bedroom House in Kantafu</a>
                         <div class="single-list-price" id="single-price">Kes. 8 M</div>
                         <!-- <span class="single-list-price"></span> -->
-                      </h3>                      
+                      </h3>
                     </div>
                   </div>
-                  
+
                   <div class="single-item-address">
                     <ul>
                       <li>
-                        <i class="fas fa-map-marker-alt" id="single-location"></i>Kantafu,Kangundo Road, Safaricom area, 1.2 kms from the tarmac.
+                        <i class="fas fa-map-marker-alt" id="single-location"></i>Kantafu,Kangundo Road, Safaricom area,
+                        1.2 kms from the tarmac.
                       </li>
                     </ul>
                   </div>
@@ -270,7 +271,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="single-listing-box1">
                   <div class="overview-area">
                     <h3 class="item-title">Overview</h3>
@@ -316,7 +317,8 @@
                   <div class="overview-area listing-area">
                     <h3 class="item-title">About This Listing</h3>
                     <p>
-                      An exquisite house for sale in Kantafu, Safaricom area,3  Bedroom ensuite, own compound with executive finishing and beautiful lanscapping. CCTV on Site
+                      An exquisite house for sale in Kantafu, Safaricom area,3 Bedroom ensuite, own compound with
+                      executive finishing and beautiful lanscapping. CCTV on Site
                     </p>
                   </div>
                   <!-- <div class="overview-area ameniting-box">
@@ -378,7 +380,9 @@
                   </div>
                   <ul class="wid-contact-button">
                     <li>
-                      <a href="https://wa.me/254722934039?text=I'm%20interested%20in%20the%20plots%20you%20are%20selling."><i class="fas fa-comment"></i>Quick Chat</a>
+                      <a
+                        href="https://wa.me/254722934039?text=I'm%20interested%20in%20the%20plots%20you%20are%20selling."><i
+                          class="fas fa-comment"></i>Quick Chat</a>
                     </li>
                     <li>
                       <a href=".././contact/"><i class="fas fa-share-alt"></i>Share</a>
@@ -738,27 +742,27 @@
     //Clone the card template
     const container = document.getElementById("list");
     const cardTemplate = document.getElementById("template");
-    for (let i = 0; i < 10; i++) {
-        container.append(cardTemplate.content.cloneNode(true));
-    }
+
 
     fetch(".././listings.json")
-        .then((response) => response.json())
-        .then(posts => {
-            console.log(posts)
-
-            container.innerHTML = "";
-            posts.forEach((post) => {
-                const div = cardTemplate.content.cloneNode(true);
-                div.getElementById("list-link").href = `/single-listing/?product=` + post.slug + `&id=` + post.id;
-                div.getElementById("list-img").src = `.././img/plot/` + post.cover;
-                div.getElementById("list-title").textContent = post.title;
-                div.getElementById("list-price").textContent =`Kes&nbsp` + post.price;
-                div.getElementById("list-size").textContent = post.size;
-                container.append(div);
-            });
+      .then((response) => response.json())
+      .then(posts => {
+        console.log(posts)
+        for (let i = 0; i < posts.length; i++) {
+          container.append(cardTemplate.content.cloneNode(true));
+        }
+        container.innerHTML = "";
+        posts.forEach((post) => {
+          const div = cardTemplate.content.cloneNode(true);
+          div.getElementById("list-link").href = `/single-listing/?product=` + post.slug + `&id=` + post.id;
+          div.getElementById("list-img").src = `.././img/plot/` + post.cover;
+          div.getElementById("list-title").textContent = post.title;
+          div.getElementById("list-price").textContent = `Kes&nbsp` + post.price;
+          div.getElementById("list-size").textContent = post.size;
+          container.append(div);
         });
-</script>
+      });
+  </script>
 </body>
 
 </html>
