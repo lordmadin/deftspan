@@ -195,8 +195,9 @@
                   <div class="single-item-address">
                     <ul>
                       <li>
-                        <i class="fas fa-map-marker-alt" id="single-location"></i>Kantafu,Kangundo Road, Safaricom area,
-                        1.2 kms from the tarmac.
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="single-location">Kantafu,Kangundo Road, Safaricom area,
+                          1.2 kms from the tarmac.</span>
                       </li>
                     </ul>
                   </div>
@@ -216,7 +217,7 @@
                       </div>
                       <div class="swiper-slide">
                         <div class="feature-img1 zoom-image-hover">
-                          <img src=".././img/plot/3-bedroom-house-2.jpeg" alt="feature" width="1000" height="435" />
+                          <img src=".././img/plot/3-bedroom-house-2.jpeg" alt="feature" width="1000" height="435" id="cover"/>
                         </div>
                       </div>
 
@@ -315,8 +316,8 @@
                     </div>
                   </div>
                   <div class="overview-area listing-area">
-                    <h3 class="item-title" id="list-about">About This Listing</h3>
-                    <p>
+                    <h3 class="item-title">About This Listing</h3>
+                    <p id="list-about">
                       An exquisite house for sale in Kantafu, Safaricom area,3 Bedroom ensuite, own compound with
                       executive finishing and beautiful lanscapping. CCTV on Site
                     </p>
@@ -750,7 +751,7 @@
         product = data[id-1];
         console.log(product)
 
-          //div.getElementById("list-img").src = `.././img/plot/` + product.cover;
+          document.getElementById("cover").src = `.././img/plot/` + product.cover;
           document.getElementById("single-title").textContent = product.title;
           document.getElementById("single-price").textContent =  `Kes.` + " " + product.price;
           document.getElementById("single-location").innerText = product.location;
