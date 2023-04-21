@@ -747,7 +747,7 @@
     fetch(".././listings.json")
       .then((response) => response.json())
       .then(data => {
-        product = data[id]-1;
+        product = data[id-1];
         console.log(product)
 
           //div.getElementById("list-img").src = `.././img/plot/` + product.cover;
