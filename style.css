@@ -2007,11 +2007,7 @@ a.phone{
   left: 208px;
   bottom: -22px;
 }
-@media only screen and (max-width: 1199px) {
-  .header-action-layout1 .listing-button2:after {
-  
-  }
-}
+
 .header-action-layout4 {
   justify-content: flex-end;
 }
@@ -3454,10 +3450,12 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   }
 }
 @media only screen and (max-width: 375px) {
-  .item-shorting-box {var(--rt-primary-light)
+  .item-shorting-box{
+  color: var(--rt-primary-light);
     text-align: center;
   }
 }
+
 .item-shorting-box .shorting-title .item-title {
   font-weight: 500;
   font-size: 18px;
@@ -4169,8 +4167,8 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
 }
 @media only screen and (max-width: 479px) {
   .widget.widget-listing-box1 .widget-listing {
-    /* display: block; */
-    /* text-align: center; */
+    display: block; 
+     text-align: center; 
   }
 }
 .widget.widget-listing-box1 .widget-listing:hover .item-img a img {
@@ -4196,7 +4194,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
 }
 @media only screen and (max-width: 479px) {
   .widget.widget-listing-box1 .widget-listing .item-content {
-    /* margin-left: 0; */
+    margin-left: 0; 
   }
 }
 .widget.widget-listing-box1 .widget-listing .item-content .item-title {
@@ -6586,6 +6584,14 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   animation: rtTopBottom ease-in-out forwards infinite;
   animation-duration: 10s;
 }
+
+@keyframes rtTopBottom{
+  50% {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
 @-webkit-keyframes rtTopBottom {
   50% {
     -webkit-transform: translateY(-50%);
@@ -12446,7 +12452,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
 }
 @media only screen and (max-width: 1641px) {
   .property-box2 .item-content .item-categoery3 ul li:nth-child(3) {
-    /* display: none; */
+  display: none; 
   }
 }
 .property-box2 .item-content .item-categoery3 ul li:last-child {
@@ -15558,9 +15564,7 @@ a#list-link:hover .property-box3 .item-img img {
   transition: all 0.3s ease-in-out;
   z-index: -1;
 }
-.choose-box1 .choose-shape1 a:hover {
 
-}
 .choose-box1 .choose-shape1 a img {
   transition: all 0.3s ease-in-out;
 }

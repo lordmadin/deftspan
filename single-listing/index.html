@@ -775,6 +775,16 @@
     const params = new URLSearchParams(query);
     const id = parseInt(params.get("id"));
 
+    gallery.querySelector('.btn.prev.img-btn').addEventListener('click', scrollToNextPage);
+    gallery.querySelector('.btn.next.img-btn').addEventListener('click', scrollToPrevPage);
+
+    function scrollToNextPage() {
+      gallery_scroller.scrollBy(gallery_item_size, 0);
+    }
+    function scrollToPrevPage() {
+      gallery_scroller.scrollBy(-gallery_item_size, 0);
+    }
+
     fetch(".././listings.json")
       .then((response) => response.json())
       .then(data => {
@@ -804,25 +814,6 @@
           document.querySelector(".colored_card").style.width = "100%"
         }
       });
-
-
-    gallery.querySelector('.btn.prev.img-btn').addEventListener('click', scrollToNextPage);
-    gallery.querySelector('.btn.next.img-btn').addEventListener('click', scrollToPrevPage);
-
-
-
-
-    // For paginated scrolling, simply scroll the gallery one item in the given
-    // direction and let css scroll snaping handle the specific alignment.
-
-
-    function scrollToNextPage() {
-      gallery_scroller.scrollBy(gallery_item_size, 0);
-    }
-    function scrollToPrevPage() {
-      gallery_scroller.scrollBy(-gallery_item_size, 0);
-    }
-
 
   </script>
 </body>
