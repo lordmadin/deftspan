@@ -37,6 +37,107 @@
   <!-- Pannellum -->
   <link rel="stylesheet" href=".././css/pannellum.css" />
 
+  <style type="text/css" >
+.gallery {
+  position: relative;
+  max-width: 800px;
+  padding: 0 10;
+  scroll-behavior:smooth;
+}
+
+.gallery_scroller {
+   /* snap mandatory on horizontal axis  */
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  display: flex;
+  align-items: center;
+
+  height: 500px;
+  
+  /* Enable Safari touch scrolling physics which is needed for scroll snap */
+  -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.gallery_scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery_scroller div {
+   /* snap align center  */
+  scroll-snap-align: center;
+  margin: 10px;
+  position: relative;
+  transition: 0.3s ease-in;
+  
+}
+
+.gallery_scroller img {
+  border-radius: 10px;
+  animation: animate__slideInRight; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+  
+}
+
+.gallery_scroller div.colored_card {
+  min-width: 75%;
+  min-height: 95%;
+  border-radius: 10px;
+  animation: animate__slideInRight; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+  scroll-behavior:smooth;
+ }
+
+.gallery div.note {
+  position: absolute;
+
+  /* vertically align center */
+  top:  50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+
+  background: rgba(0,0,0, 0.6);
+  padding: 20px;
+  position: absolute;
+
+  font-size: 4em;
+  color: white;
+}
+
+
+.gallery .btn {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: 30px;
+  width: 30px;
+
+  border-radius: 2px;
+  background-color: rgba(0,0,0,0.5);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  z-index: 1;
+}
+
+.gallery .btn.next {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M25.557 14.7L13.818 2.961 16.8 0l16.8 16.8-16.8 16.8-2.961-2.961L25.557 18.9H0v-4.2z" fill="%23FFF" fill-rule="evenodd"/></svg>');
+  right: 10px;
+}
+
+.gallery .btn.prev {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M33.6 14.7H8.043L19.782 2.961 16.8 0 0 16.8l16.8 16.8 2.961-2.961L8.043 18.9H33.6z" fill="%23FFF" fill-rule="evenodd"/></svg>');
+  left: 10px;
+}
+
+  </style>
+
   <!-- noUIrangle slider -->
   <link rel="stylesheet" href=".././vendor/noUiSlider/nouislider.min.css" />
   <!-- Style Css Start Here -->
@@ -209,52 +310,18 @@
               <div class="col-lg-8">
                 <div class="featured-thumb-slider-area wow fadeInUp" data-wow-delay=".4s">
                   <div class="testimonial-layout2 swiper-container">
-                    <div class="swiper-wrapper" id="output">
-                        <div class="swiper-slide">
-                          <div class="item-img">
-                            <img src=".././img/plot/3-bedroom-house.jpeg" alt="feature" width="800" height="420" />
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="item-img">
-                            <img src=".././img/plot/3-bedroom-house-2.jpeg" alt="feature" height="100" />
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="item-img">
-                            <img src=".././img/plot/3-bedroom-house-3.jpeg" alt="feature" height="100" />
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="item-img">
-                            <img src=".././img/plot/3-bedroom-house-4.jpeg" alt="feature" height="100" />
-                          </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="item-img">
-                            <img src=".././img/plot/3-bedroom-house-5.jpeg" alt="feature" height="100" />
-                          </div>
-                        </div>  
-                        <div class="swiper-slide">
-                          <div class="item-img">
-                            <img src=".././img/plot/3-bedroom-house-6.jpeg" alt="feature" height="100" />
-                          </div>
-                        </div>  
-                        <div class="swiper-slide">
-                          <div class="item-img">
-                            <img src=".././img/plot/3-bedroom-house-7.jpeg" alt="feature" height="100" />
-                          </div>
-                        </div>   
-                        <div class="swiper-slide">
-                          <div class="item-img">
-                            <img src=".././img/plot/3-bedroom-house-8.jpeg" alt="feature" height="100" />
-                          </div>
-                        </div>                                                 
+                    <div id="paginated_gallery" class="gallery">
+                      <div class="gallery_scroller" id="output">
+
+                      </div>
+
+                      <div id="btn">
+                        <span class="btn prev img-btn"></span>
+                        <span class="btn next img-btn"></span>
+                      </div>
                     </div>
-                   
-                    <div class="swiper-button-prev img-btn"></div>
-                    <div class="swiper-button-next img-btn"></div>
-                </div>
+
+                  </div>
                 </div>
 
                 <div class="single-listing-box1">
@@ -306,7 +373,7 @@
                       executive finishing and beautiful lanscapping. CCTV on Site
                     </p>
                   </div>
-                  
+
                 </div>
               </div>
               <div class="col-lg-4 widget-break-lg sidebar-widget">
@@ -698,6 +765,9 @@
   <script src=".././js/main.js"></script>
   <script>
     const query = window.location.search;
+    const gallery = document.querySelector('#paginated_gallery');
+    const gallery_scroller = gallery.querySelector('.gallery_scroller');
+    const gallery_item_size = gallery_scroller.querySelector('div').clientWidth;
     const output = document.getElementById("output")
     const params = new URLSearchParams(query);
     const id = parseInt(params.get("id"));
@@ -712,23 +782,42 @@
         console.log(imagesArray)
 
         let images = ""
-            imagesArray.forEach((image, index) => {
-              images += 
-                        `<div class="swiper-slide">
-                          <div class="item-img">
+        imagesArray.forEach((image, index) => {
+          images +=
+            `<div class="colored_card me-3">
                             <img src=".././img/plot/${image}" alt="feature" width="800" height="420" />
-                          </div>
-                        </div>`
-            })
-            output.innerHTML = images;
-            
-       
+                          </div>`
+        })
+        output.innerHTML = images;
+
+
         document.getElementById("single-title").textContent = product.title;
         document.getElementById("single-price").textContent = `Kes.` + " " + product.price;
         document.getElementById("single-location").innerText = product.location;
         document.getElementById("list-about").textContent = product.desc;
-
       });
+
+
+    gallery.querySelector('swiper-button-prev.img-btn').addEventListener('click', scrollToNextPage);
+    gallery.querySelector('swiper-button-next.img-btn').addEventListener('click', scrollToPrevPage);
+
+
+
+    if (imagesArray.length < 1) {
+      document.getElementById('btn').style.display = "none";
+      document.querySelector(".colored_card").style.width = "100%"
+    }
+
+    // For paginated scrolling, simply scroll the gallery one item in the given
+    // direction and let css scroll snaping handle the specific alignment.
+    function scrollToNextPage() {
+      gallery_scroller.scrollBy(gallery_item_size, 0);
+    }
+    function scrollToPrevPage() {
+      gallery_scroller.scrollBy(-gallery_item_size, 0);
+    }
+
+
   </script>
 </body>
 
