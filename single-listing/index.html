@@ -134,16 +134,12 @@
 
     .gallery .btn.prev {
       background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M33.6 14.7H8.043L19.782 2.961 16.8 0 0 16.8l16.8 16.8 2.961-2.961L8.043 18.9H33.6z" fill="e4520d" fill-rule="evenodd"/></svg>');
-      left: 10px;
+      left: 20px;
       background-position: 50% 50%;
       background-repeat: no-repeat;
     }
 
-    @media only screen and (max-width: 767px) {
-      span.btn.prev.img-btn {
-        left: 20px;
-      }
-    }
+
   </style>
 
   <!-- noUIrangle slider -->
@@ -800,7 +796,7 @@
 
     const gallery = document.querySelector('#paginated_gallery');
     const gallery_scroller = gallery.querySelector('.gallery_scroller');
-    const gallery_item_size = gallery_scroller.querySelectorAll('div').clientWidth;
+    const gallery_item_size = gallery_scroller.querySelector('div').clientWidth;
     
 
     gallery.querySelector('.btn.next.img-btn').addEventListener('click', scrollToNextPage);
