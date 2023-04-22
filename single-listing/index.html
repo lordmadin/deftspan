@@ -49,7 +49,7 @@
     .gallery_scroller {
       /* snap mandatory on horizontal axis  */
       scroll-snap-type: x mandatory;
-      scroll-snap-stop: always;
+      
       overflow-x: scroll;
       overflow-y: hidden;
 
@@ -768,22 +768,10 @@
   <script src=".././js/main.js"></script>
   <script>
     const query = window.location.search;
-    const gallery = document.querySelector('#paginated_gallery');
-    const gallery_scroller = gallery.querySelector('.gallery_scroller');
-    const gallery_item_size = gallery_scroller.querySelector('div').clientWidth;
-    const output = document.getElementById("output")
     const params = new URLSearchParams(query);
     const id = parseInt(params.get("id"));
+    const output = document.getElementById("output")
 
-    gallery.querySelector('.btn.prev.img-btn').addEventListener('click', scrollToNextPage);
-    gallery.querySelector('.btn.next.img-btn').addEventListener('click', scrollToPrevPage);
-
-    function scrollToNextPage() {
-      gallery_scroller.scrollBy(gallery_item_size, 0);
-    }
-    function scrollToPrevPage() {
-      gallery_scroller.scrollBy(-gallery_item_size, 0);
-    }
 
     fetch(".././listings.json")
       .then((response) => response.json())
@@ -810,6 +798,21 @@
         document.getElementById("list-about").textContent = product.desc;
       });
 
+    const gallery = document.querySelector('#paginated_gallery');
+    const gallery_scroller = gallery.querySelector('.gallery_scroller');
+    const gallery_item_size = gallery_scroller.querySelectorAll('div').clientWidth;
+    
+
+    gallery.querySelector('.btn.next.img-btn').addEventListener('click', scrollToNextPage);
+    gallery.querySelector('.btn.prev.img-btn').addEventListener('click', scrollToPrevPage);
+
+
+    function scrollToNextPage() {
+      gallery_scroller.scrollBy(gallery_item_size, 0);
+    }
+    function scrollToPrevPage() {
+      gallery_scroller.scrollBy(-gallery_item_size, 0);
+    }   
   </script>
 </body>
 
