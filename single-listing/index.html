@@ -716,14 +716,13 @@
               images += 
                         `<div class="swiper-slide">
                           <div class="item-img">
-                            <img src=".././img/plot/${index}" alt="feature" width="800" height="420" />
+                            <img src=".././img/plot/${image}" alt="feature" width="800" height="420" />
                           </div>
                         </div>`
             })
             output.innerHTML = images;
             
-
-        document.getElementById("cover").src = `.././img/plot/` + product.cover;
+       
         document.getElementById("single-title").textContent = product.title;
         document.getElementById("single-price").textContent = `Kes.` + " " + product.price;
         document.getElementById("single-location").innerText = product.location;
