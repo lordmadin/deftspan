@@ -37,100 +37,113 @@
   <!-- Pannellum -->
   <link rel="stylesheet" href=".././css/pannellum.css" />
 
-  <style type="text/css" >
-.gallery {
-  position: relative;
-  max-width: 100%;
-  padding: 0 10;
-  scroll-behavior:smooth;
-}
+  <style type="text/css">
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      min-height: 420px;
+      padding: 0 10;
+      scroll-behavior: smooth;
+    }
 
-.gallery_scroller {
-   /* snap mandatory on horizontal axis  */
-  scroll-snap-type: x mandatory;
-  scroll-snap-stop: always;
-  overflow-x: scroll;
-  overflow-y: hidden;
+    .gallery_scroller {
+      /* snap mandatory on horizontal axis  */
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      overflow-x: scroll;
+      overflow-y: hidden;
 
-  display: flex;
-  align-items: center;
+      display: flex;
+      align-items: center;
 
-  height: auto;
-  
-  /* Enable Safari touch scrolling physics which is needed for scroll snap */
-  -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-.gallery_scroller::-webkit-scrollbar {
-    display: none;
-}
+      height: auto;
 
-.gallery_scroller div {
-   /* snap align center  */
-  scroll-snap-align: center;
-  margin: 10px;
-  position: relative;
-  transition: 0.3s ease-in;
-  
-}
+      /* Enable Safari touch scrolling physics which is needed for scroll snap */
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
 
-.gallery_scroller img {
-  border-radius: 10px;
-  animation: animate__slideInRight; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 2s; /* don't forget to set a duration! */
-  
-}
+    .gallery_scroller::-webkit-scrollbar {
+      display: none;
+    }
 
-.gallery_scroller div.colored_card {
-  min-width: 75%;
-  min-height: 95%;
-  border-radius: 10px;
-  animation: animate__slideInRight; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 2s; /* don't forget to set a duration! */
-  scroll-behavior:smooth;
- }
+    .gallery_scroller div {
+      /* snap align center  */
+      scroll-snap-align: center;
+      margin: 10px;
+      position: relative;
+      transition: 0.3s ease-in;
 
-.gallery div.note {
-  position: absolute;
+    }
 
-  /* vertically align center */
-  top:  50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
+    .gallery_scroller img {
+      border-radius: 10px;
+      animation: animate__slideInRight;
+      /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 2s;
+      /* don't forget to set a duration! */
 
-  background: rgba(0,0,0, 0.6);
-  padding: 20px;
-  position: absolute;
+    }
 
-  font-size: 4em;
-  color: white;
-}
+    .gallery_scroller div.colored_card {
+      min-width: 75%;
+      min-height: 95%;
+      border-radius: 10px;
+      animation: animate__slideInRight;
+      /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 2s;
+      /* don't forget to set a duration! */
+      scroll-behavior: smooth;
+    }
+
+    .gallery div.note {
+      position: absolute;
+
+      /* vertically align center */
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      position: absolute;
+
+      font-size: 4em;
+      color: white;
+    }
 
 
-.gallery .btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  color: var(--rt-primary-color);
-}
+    .gallery .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      color: var(--rt-primary-color);
+    }
 
-.gallery .btn.next {
-  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M25.557 14.7L13.818 2.961 16.8 0l16.8 16.8-16.8 16.8-2.961-2.961L25.557 18.9H0v-4.2z" fill="e4520d" fill-rule="evenodd"/></svg>');
-  right: 10px;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
+    .gallery .btn.next {
+      background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M25.557 14.7L13.818 2.961 16.8 0l16.8 16.8-16.8 16.8-2.961-2.961L25.557 18.9H0v-4.2z" fill="e4520d" fill-rule="evenodd"/></svg>');
+      right: 10px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
 
-.gallery .btn.prev {
-  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M33.6 14.7H8.043L19.782 2.961 16.8 0 0 16.8l16.8 16.8 2.961-2.961L8.043 18.9H33.6z" fill="e4520d" fill-rule="evenodd"/></svg>');
-  left: 10px;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
+    .gallery .btn.prev {
+      background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M33.6 14.7H8.043L19.782 2.961 16.8 0 0 16.8l16.8 16.8 2.961-2.961L8.043 18.9H33.6z" fill="e4520d" fill-rule="evenodd"/></svg>');
+      left: 10px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
 
+    @media only screen and (max-width: 767px) {
+      span.btn.prev.img-btn {
+        left: 20px;
+      }
+    }
   </style>
 
   <!-- noUIrangle slider -->
@@ -304,7 +317,7 @@
             <div class="row">
               <div class="col-lg-8">
                 <div class="featured-thumb-slider-area wow fadeInUp" data-wow-delay=".4s">
-                  <div class="testimonial-layout2 swiper-container">
+                  <div>
                     <div id="paginated_gallery" class="gallery">
                       <div class="gallery_scroller" id="output">
                         <div class="colored_card"> </div>
@@ -792,9 +805,9 @@
         document.getElementById("list-about").textContent = product.desc;
 
         if (imagesArray.length < 1) {
-        document.getElementById('btn').style.display = "none";
-        document.querySelector(".colored_card").style.width = "100%"
-       }
+          document.getElementById('btn').style.display = "none";
+          document.querySelector(".colored_card").style.width = "100%"
+        }
       });
 
 
@@ -806,7 +819,7 @@
 
     // For paginated scrolling, simply scroll the gallery one item in the given
     // direction and let css scroll snaping handle the specific alignment.
-   
+
 
     function scrollToNextPage() {
       gallery_scroller.scrollBy(gallery_item_size, 0);
