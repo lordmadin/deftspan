@@ -808,11 +808,6 @@
         document.getElementById("single-price").textContent = `Kes.` + " " + product.price;
         document.getElementById("single-location").innerText = product.location;
         document.getElementById("list-about").textContent = product.desc;
-
-        if (imagesArray.length < 1) {
-          document.getElementById('btn').style.display = "none";
-          document.querySelector(".colored_card").style.width = "100%"
-        }
       });
 
   </script>
