@@ -10,7 +10,7 @@
         $target = contactForm.find(".form-response");
       if (e.isDefaultPrevented()) {
         $target.html(
-          "<div class='alert alert-danger'><p>Please select all required field.</p></div>"
+          "<div class='alert alert-danger'><p>Please fill out all required fields.</p></div>"
         );
       } else {
         $.ajax({
