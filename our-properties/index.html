@@ -483,7 +483,7 @@
                 container.innerHTML = "";
                 posts.forEach((post) => {
                     const div = cardTemplate.content.cloneNode(true);
-                    div.getElementById("list-link").href = `deftspan/single-listing/?id=` + post.id;
+                    div.getElementById("list-link").href = `https://lordmadin.github.io/deftspan/single-listing/?id=` + post.id;
                     div.getElementById("list-img").src = `.././img/plot/` + post.cover;
                     div.getElementById("list-title").textContent = post.title;
                     div.getElementById("list-price").textContent = `Kes` + " " + post.price;
