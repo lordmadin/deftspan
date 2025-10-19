@@ -169,7 +169,7 @@
                 <div id="list" class="row">
                     <template id="template">
                         <div class="col-lg-4 col-md-6">
-                            <a href="/single-listing/" id="list-link">
+                            <a href="/single-listing/?id=1" id="list-link">
                                 <div class="property-box3 wow fadeInUp" data-wow-delay=".2s">
                                     <div class="item-img">
                                         <img id="list-img" src=".././img/plot/3-bedroom-house.jpeg" alt="property"
@@ -197,7 +197,7 @@
                     </template>
                 </div>
                 <div class="property-button">
-                    <a href="/our-properties/" class="item-btn">Load More...</a>
+                    <a href="/our-properties/ class="item-btn">Load More...</a>
                 </div>
             </div>
         </section>
@@ -483,7 +483,7 @@
                 container.innerHTML = "";
                 posts.forEach((post) => {
                     const div = cardTemplate.content.cloneNode(true);
-                    div.getElementById("list-link").href = `/single-listing/?product=` + post.slug + `&id=` + post.id;
+                    div.getElementById("list-link").href = `/single-listing/?id=` + post.id;
                     div.getElementById("list-img").src = `.././img/plot/` + post.cover;
                     div.getElementById("list-title").textContent = post.title;
                     div.getElementById("list-price").textContent = `Kes` + " " + post.price;
